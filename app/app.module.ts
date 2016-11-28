@@ -24,7 +24,8 @@ import { MountainList }         from './components/state-list/mountains/mountain
         StateList
     ],
     imports:      [
-        BrowserModule
+        BrowserModule,
+        RouterModule.forRoot(appLocalRoutes)
     ],
     providers: [
         StateService

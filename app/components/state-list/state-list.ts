@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component }    from '@angular/core';
+import { Router }       from '@angular/router';
 
-import { State } from '../../domain/state';
-import {StateService} from '../../domain/services/state-service';
+import { State }        from '../../domain/state';
+import { StateService } from '../../domain/services/state-service';
 
 declare var require: any;
 const template: string = require('./state-list.html');
@@ -18,11 +19,11 @@ export class StateList {
 
     public states: Array<State>;
 
-    constructor(private service: StateService) {
+    constructor(private service: StateService, private router: Router) {
         this.states = this.service.states();
     }
 
     public select(selected: State) {
-        console.log('selecting', selected.name);
+        this.router.navigate(['/states', selected.abv]);
     }
 }
