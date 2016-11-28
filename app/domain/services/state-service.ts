@@ -18,6 +18,10 @@ export class StateService {
         return this.stateInfo.states;
     }
 
+    public state(abbreviation: string):State {
+        return this.stateInfo.states.find((s) => s.abv === abbreviation);
+    }
+
     public rivers(state: State): Array<River> {
         return this.stateInfo.riversByState[state.abv];
     }
