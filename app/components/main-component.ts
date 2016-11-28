@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
     ],
     template: `
         <context-bar></context-bar>
-        <state-list></state-list>
+        <city-list></city-list>
     `
 })
 export class MainComponent { }

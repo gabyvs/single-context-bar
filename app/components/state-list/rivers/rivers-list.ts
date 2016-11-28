@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { River } from '../../../domain/river';
 
 declare var require: any;
-const template: string = require('./river-list.html');
+const template: string = require('./rivers-list.html');
 
 @Component({
     selector: 'river-list',

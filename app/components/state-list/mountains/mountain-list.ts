@@ -13,6 +13,6 @@ const template: string = require('./mountain-list.html');
         `],
     template: template
 })
-export class MountainLust {
+export class MountainList {
     public mountains: Array<Mountain>;
 }

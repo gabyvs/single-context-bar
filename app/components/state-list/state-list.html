@@ -1,4 +1,8 @@
 <div class="container">
+    <div class="row">
+        <div class="col-md-6">State Name</div>
+        <div class="col-md-6">Abbreviation</div>
+    </div>
     <div class="row" *ngFor="let state of states">
         <div class="col-md-6"><a (click)="select(state)">{{ state.name }}</a></div>
         <div class="col-md-6">{{ state.abv }}</div>
