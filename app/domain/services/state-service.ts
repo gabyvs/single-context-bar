@@ -18,7 +18,7 @@ export class StateService {
         return this.stateInfo.states;
     }
 
-    public state(abbreviation: string):State {
+    public state(abbreviation: string): State {
         return this.stateInfo.states.find((s) => s.abv === abbreviation);
     }
 

@@ -27,7 +27,7 @@ export class RiverList {
     constructor(private service: StateService, private route: ActivatedRoute) {}
 
     private subscribeToRoutingChanges() {
-        this.route.params.subscribe(params => {
+        this.routingSubscription = this.route.params.subscribe(params => {
             this.state = this.service.state(params['state']);
             this.rivers = this.service.rivers(this.state);
         });

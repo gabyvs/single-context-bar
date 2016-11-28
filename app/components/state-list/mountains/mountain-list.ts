@@ -27,7 +27,7 @@ export class MountainList {
     constructor(private service: StateService, private route: ActivatedRoute) {}
 
     private subscribeToRoutingChanges() {
-        this.route.params.subscribe(params => {
+        this.routingSubscription = this.route.params.subscribe(params => {
             this.state = this.service.state(params['state']);
             this.mountains = this.service.mountains(this.state);
         });

@@ -20,10 +20,12 @@ export class ContextBar implements OnDestroy, OnInit {
 
     private selected: string;
 
+    public addCaption: string;
+
     public options = [
-        { label: 'Cities', name: 'cities' },
-        { label: 'Rivers', name: 'rivers' },
-        { label: 'Mountains', name: 'mountains' },
+        { addCaption: 'City', label: 'Cities', name: 'cities',  },
+        { addCaption: 'River', label: 'Rivers', name: 'rivers' },
+        { addCaption: 'Mountain', label: 'Mountains', name: 'mountains' }
     ];
 
     private navigationSubscription: Subscription;
@@ -36,10 +38,10 @@ export class ContextBar implements OnDestroy, OnInit {
             const tree = this.router.parseUrl(events.url);
             const primaryRoot = tree.root.children['primary'];
             if (primaryRoot && primaryRoot.segments) {
-                switch(primaryRoot.segments.length) {
+                switch (primaryRoot.segments.length) {
                     case 2:
                         this.state = this.service.state(primaryRoot.segments[1].path);
-                        this.selected = undefined;
+                        this.selected = 'cities';
                         break;
                     case 3:
                         this.state = this.service.state(primaryRoot.segments[1].path);
@@ -51,11 +53,17 @@ export class ContextBar implements OnDestroy, OnInit {
                 }
             }
 
+            const sel = this.options.find(o => o.name === this.selected);
+            this.addCaption = sel ? sel.addCaption : 'State';
         });
     }
 
     public states() {
         this.router.navigate(['/states']);
+    }
+
+    public nav(option) {
+        this.router.navigate([`/states/${this.state.abv}/${option}`]);
     }
 
     public ngOnInit() {
