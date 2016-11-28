@@ -1,0 +1,19 @@
+{
+    "defaultUrl": "http://localhost:8080",
+    "rules": [
+        {
+            "path": "^/contextbar/bundles/",
+            "target": "http://localhost:8080/contextbar/bundles/"
+        },
+        {
+            "path": "^/static/",
+            "target": "http://static.unified.ui.apigee.com.s3.amazonaws.com/apigee-stilo/",
+            "removeHeaders": ["host", "cookie", "authorization"]
+        },
+        {
+            "path": "^/",
+            "resetPath": true,
+            "target": "http://localhost:8080"
+        }
+    ]
+}

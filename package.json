@@ -1,0 +1,38 @@
+{
+  "name": "contextbar",
+  "version": "1.0.0",
+  "description": "Angular2 SPA with a single context bar",
+  "main": "index.js",
+  "author": "Gabriela Vazquez",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start:neza": "nezaldi",
+    "start": "catufol -r & npm run start:neza",
+    "typingsInstall": "typings install",
+    "postinstall": "npm run typingsInstall"
+  },
+  "devDependencies": {
+    "catufol": "0.2.0",
+    "less": "2.7.1",
+    "nezaldi": "0.3.5",
+    "tslint": "3.15.1",
+    "typescript": "2.0.6",
+    "typings": "1.4.0"
+  },
+  "dependencies": {
+    "@angular/common": "2.1.2",
+    "@angular/compiler": "2.1.2",
+    "@angular/core": "2.1.2",
+    "@angular/forms": "2.1.2",
+    "@angular/http": "2.1.2",
+    "@angular/platform-browser": "2.1.2",
+    "@angular/platform-browser-dynamic": "2.1.2",
+    "@angular/router": "3.1.2",
+    "bootstrap": "3.3.7",
+    "es6-shim": "0.35.1",
+    "lodash": "4.16.6",
+    "moment": "2.15.2",
+    "reflect-metadata": "0.1.8",
+    "zone.js": "0.6.26"
+  }
+}

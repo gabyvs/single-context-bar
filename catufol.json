@@ -1,0 +1,21 @@
+{
+  "appName": "contextbar",
+  "vendors": [
+    "es6-shim",
+    "reflect-metadata",
+    "zone.js",
+    "rxjs",
+    "lodash",
+    "moment",
+    "@angular/common",
+    "@angular/compiler",
+    "@angular/core",
+    "@angular/forms",
+    "@angular/http",
+    "@angular/platform-browser",
+    "@angular/platform-browser-dynamic",
+    "@angular/router"
+  ],
+  "devEntryFile": "./app/main.ts",
+  "prodEntryFile": "./app/main.ts"
+}
