@@ -3,6 +3,11 @@
         <li><span *ngIf="!state">States</span><a *ngIf="state" (click)="states()">States</a></li>
         <li *ngIf="state" class="active">{{ state.name }}</li>
     </ol>
+    <div class="context-bar-left-actions" *ngIf="state">
+        <select>
+            <option *ngFor="let option of options" value="option.name" [selected]="selected === option.name">{{ option.label }}</option>
+        </select>
+    </div>
     <div class="context-bar-actions">
         <button class="btn" (click)="redirect()">
             <span class="fa fa-plus"></span>
