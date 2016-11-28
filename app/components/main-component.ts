@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
         `
     ],
     template: `
-        <h1>My Main Component</h1>
+        <context-bar></context-bar>
+        <state-list></state-list>
     `
 })
 export class MainComponent { }
