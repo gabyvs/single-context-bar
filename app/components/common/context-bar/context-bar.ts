@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
+import * as _ from 'lodash';
 import { Subscription } from 'rxjs';
 
 import { PageOption, OptionService }   from './page-option';
@@ -13,13 +14,15 @@ const template: string = require('./context-bar.html');
     selector: 'context-bar',
     styles: [`
         .context-bar-left-actions { display: inline-block } 
-        .add-caption { text-transform: capitalize } 
+        .add-caption, .select-label { text-transform: capitalize } 
     `],
     template: template
 })
 export class ContextBar implements OnDestroy, OnInit {
 
     public state: State;
+
+    public options: Array<PageOption>;
 
     private selected: PageOption;
 
@@ -28,20 +31,19 @@ export class ContextBar implements OnDestroy, OnInit {
     @Output() public addEvent = new EventEmitter<boolean>();
 
     constructor(private route: ActivatedRoute, private router: Router,
-                private stateService: StateService, private optionService: OptionService) {}
+                private stateService: StateService, private optionService: OptionService) {
+        this.options = this.optionService.allOptions();
+    }
 
-    private setViewState(state: string) {
+    private setViewState(state: string, segments: Array<UrlSegment>) {
         this.state = this.stateService.state(state);
-        // TODO: fix this
-        this.selected = this.optionService.findOption();
+        this.selected = this.optionService.findOption(_.last(segments).path);
     }
 
     private initRoutingHandlers() {
-
-        this.setViewState(this.route.snapshot.params['state']);
-        // TODO: implement this
+        this.setViewState(this.route.snapshot.params['state'], this.route.snapshot.url);
         this.routeSubscription = this.route.params.subscribe((params) => {
-            this.setViewState(params['state']);
+            this.setViewState(params['state'], this.route.snapshot.url);
         });
     }
 

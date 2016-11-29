@@ -24,6 +24,6 @@ export class StateList {
     }
 
     public select(selected: State) {
-        this.router.navigate(['/states', selected.abv]);
+        this.router.navigate([`/states/${selected.abv}/cities`]);
     }
 }
