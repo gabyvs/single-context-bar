@@ -4,7 +4,7 @@
         <li *ngIf="state" class="active">{{ state.name }}</li>
     </ol>
     <div class="context-bar-left-actions" *ngIf="state">
-        <select (change)="nav($event.target.value)">
+        <select (change)="page($event.target.value)">
             <option *ngFor="let option of options"
                     value="{{ option.name }}"
                     [selected]="selected === option.name">
@@ -12,9 +12,9 @@
         </select>
     </div>
     <div class="context-bar-actions">
-        <button class="btn" (click)="redirect()">
+        <button class="btn" (click)="add()">
             <span class="fa fa-plus"></span>
-            <span>{{ addCaption }}</span>
+            <span class="add-caption">{{ selected.addCaption }}</span>
         </button>
     </div>
 </div>

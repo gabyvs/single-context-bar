@@ -1,8 +1,8 @@
 import { Component }    from '@angular/core';
 import { Router }       from '@angular/router';
 
-import { State }        from '../../domain/state';
-import { StateService } from '../../domain/services/state-service';
+import { StateService } from '../../../domain/services/state-service';
+import { State }        from '../../../domain/state';
 
 declare var require: any;
 const template: string = require('./state-list.html');
