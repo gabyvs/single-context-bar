@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Router, ActivatedRoute, UrlSegment} from '@angular/router';
 import * as _ from 'lodash';
 import { Subscription } from 'rxjs';
 
@@ -20,7 +20,7 @@ export class StatesMain implements OnDestroy, OnInit {
     constructor(private router: Router, private route: ActivatedRoute) {}
 
     public showAdd() {
-        this.router.navigate([`/states`, { adding: true }]);
+        this.router.navigate([`/states`, { adding: true }]); // /states;adding=true
     }
 
     public add(result) {

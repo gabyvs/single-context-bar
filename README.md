@@ -25,4 +25,12 @@ The application will be available on your browser at [localhost:3000](http://loc
 
 ## How does it work
 
-This is using angular router and several regular angular2 components.  
+This is using angular router and several regular angular2 components. It shows a state selector and per each state you can see its cities, rivers and mountains.
+
+Application state is handled by changes in the routes.
+
+Check out the following files:
+
+**states-main.ts** Each of the pages have a main. It includes the list, the context bar and the `new` component. This will handle navigation to adding a new state and to selecting a state.
+
+**state-new.ts** This should handle adding a new state. It will be displayed only when the route has the parameter adding set to true.
