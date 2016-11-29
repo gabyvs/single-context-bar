@@ -53,7 +53,7 @@ export class OptionService {
     }
 
     public findOption(route?: string): PageOption {
-        const routeOrDefault = route || 'states';
+        const routeOrDefault = (route || 'states').replace('-new', '');
         return OPTIONS.find(o => {
             return o.route === routeOrDefault;
         });

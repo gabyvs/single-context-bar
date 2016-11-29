@@ -13,6 +13,7 @@ import { MountainsMain }    from './components/mountains/mountains-main';
 import { RiverList }        from './components/rivers/list/rivers-list';
 import { RiversMain }       from './components/rivers/rivers-main';
 import { StateList }        from './components/states/list/state-list';
+import { StateNew }         from './components/states/new/state-new';
 import { StatesMain }       from './components/states/states-main';
 import { StateService }     from './domain/services/state-service';
 
@@ -28,7 +29,8 @@ import { StateService }     from './domain/services/state-service';
         RiverList,
         RiversMain,
         StateList,
-        StatesMain
+        StatesMain,
+        StateNew
     ],
     imports:      [
         BrowserModule,
